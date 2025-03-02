@@ -1,0 +1,14 @@
+C:\Users\HP\Desktop\Vasvári 13.b\GyCs\záróvizsga-gyak\Gyakorlas-Konzol-model-reteg\Gyakorlas-Konzol-model-reteg\bin\Debug\net8.0\Gyakorlas-Konzol-model-reteg.exe
+C:\Users\HP\Desktop\Vasvári 13.b\GyCs\záróvizsga-gyak\Gyakorlas-Konzol-model-reteg\Gyakorlas-Konzol-model-reteg\bin\Debug\net8.0\Gyakorlas-Konzol-model-reteg.deps.json
+C:\Users\HP\Desktop\Vasvári 13.b\GyCs\záróvizsga-gyak\Gyakorlas-Konzol-model-reteg\Gyakorlas-Konzol-model-reteg\bin\Debug\net8.0\Gyakorlas-Konzol-model-reteg.runtimeconfig.json
+C:\Users\HP\Desktop\Vasvári 13.b\GyCs\záróvizsga-gyak\Gyakorlas-Konzol-model-reteg\Gyakorlas-Konzol-model-reteg\bin\Debug\net8.0\Gyakorlas-Konzol-model-reteg.dll
+C:\Users\HP\Desktop\Vasvári 13.b\GyCs\záróvizsga-gyak\Gyakorlas-Konzol-model-reteg\Gyakorlas-Konzol-model-reteg\bin\Debug\net8.0\Gyakorlas-Konzol-model-reteg.pdb
+C:\Users\HP\Desktop\Vasvári 13.b\GyCs\záróvizsga-gyak\Gyakorlas-Konzol-model-reteg\Gyakorlas-Konzol-model-reteg\obj\Debug\net8.0\Gyakorlas-Konzol-model-reteg.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Desktop\Vasvári 13.b\GyCs\záróvizsga-gyak\Gyakorlas-Konzol-model-reteg\Gyakorlas-Konzol-model-reteg\obj\Debug\net8.0\Gyakorlas-Konzol-model-reteg.AssemblyInfoInputs.cache
+C:\Users\HP\Desktop\Vasvári 13.b\GyCs\záróvizsga-gyak\Gyakorlas-Konzol-model-reteg\Gyakorlas-Konzol-model-reteg\obj\Debug\net8.0\Gyakorlas-Konzol-model-reteg.AssemblyInfo.cs
+C:\Users\HP\Desktop\Vasvári 13.b\GyCs\záróvizsga-gyak\Gyakorlas-Konzol-model-reteg\Gyakorlas-Konzol-model-reteg\obj\Debug\net8.0\Gyakorlas-Konzol-model-reteg.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\Vasvári 13.b\GyCs\záróvizsga-gyak\Gyakorlas-Konzol-model-reteg\Gyakorlas-Konzol-model-reteg\obj\Debug\net8.0\Gyakorlas-Konzol-model-reteg.dll
+C:\Users\HP\Desktop\Vasvári 13.b\GyCs\záróvizsga-gyak\Gyakorlas-Konzol-model-reteg\Gyakorlas-Konzol-model-reteg\obj\Debug\net8.0\refint\Gyakorlas-Konzol-model-reteg.dll
+C:\Users\HP\Desktop\Vasvári 13.b\GyCs\záróvizsga-gyak\Gyakorlas-Konzol-model-reteg\Gyakorlas-Konzol-model-reteg\obj\Debug\net8.0\Gyakorlas-Konzol-model-reteg.pdb
+C:\Users\HP\Desktop\Vasvári 13.b\GyCs\záróvizsga-gyak\Gyakorlas-Konzol-model-reteg\Gyakorlas-Konzol-model-reteg\obj\Debug\net8.0\Gyakorlas-Konzol-model-reteg.genruntimeconfig.cache
+C:\Users\HP\Desktop\Vasvári 13.b\GyCs\záróvizsga-gyak\Gyakorlas-Konzol-model-reteg\Gyakorlas-Konzol-model-reteg\obj\Debug\net8.0\ref\Gyakorlas-Konzol-model-reteg.dll

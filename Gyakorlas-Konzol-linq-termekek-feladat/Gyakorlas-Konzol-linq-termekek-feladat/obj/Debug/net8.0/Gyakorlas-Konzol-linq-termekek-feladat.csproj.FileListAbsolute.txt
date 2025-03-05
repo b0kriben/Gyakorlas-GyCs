@@ -1,0 +1,4 @@
+C:\Users\HP\Desktop\Vasvári 13.b\GyCs\záróvizsga-gyak\Gyakorlas-Konzol-linq-termekek-feladat\Gyakorlas-Konzol-linq-termekek-feladat\obj\Debug\net8.0\Gyakorlas-Konzol-linq-termekek-feladat.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Desktop\Vasvári 13.b\GyCs\záróvizsga-gyak\Gyakorlas-Konzol-linq-termekek-feladat\Gyakorlas-Konzol-linq-termekek-feladat\obj\Debug\net8.0\Gyakorlas-Konzol-linq-termekek-feladat.AssemblyInfoInputs.cache
+C:\Users\HP\Desktop\Vasvári 13.b\GyCs\záróvizsga-gyak\Gyakorlas-Konzol-linq-termekek-feladat\Gyakorlas-Konzol-linq-termekek-feladat\obj\Debug\net8.0\Gyakorlas-Konzol-linq-termekek-feladat.AssemblyInfo.cs
+C:\Users\HP\Desktop\Vasvári 13.b\GyCs\záróvizsga-gyak\Gyakorlas-Konzol-linq-termekek-feladat\Gyakorlas-Konzol-linq-termekek-feladat\obj\Debug\net8.0\Gyakorlas-Konzol-linq-termekek-feladat.csproj.CoreCompileInputs.cache

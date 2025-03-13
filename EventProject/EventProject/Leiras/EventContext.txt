@@ -1,0 +1,220 @@
+Controllers:   EventController:
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+
+[Route("api/events")]
+[ApiController]
+public class EventController : ControllerBase
+{
+    private readonly EventContext _context;
+
+    public EventController(EventContext context)
+    {
+        _context = context;
+    }
+
+    // COUNT Feladatok
+    [HttpGet("count")]
+    public async Task<int> GetEventCount()
+    {
+        return await _context.Events.CountAsync();
+    }
+
+    [HttpGet("count/author/{authorId}")]
+    public async Task<int> GetEventCountByAuthor(int authorId)
+    {
+        return await _context.Events.CountAsync(e => e.AuthorId == authorId);
+    }
+
+    [HttpGet("count/upcoming")]
+    public async Task<int> GetUpcomingEventCount()
+    {
+        var now = DateTime.Now;
+        return await _context.Events.CountAsync(e => e.EventDateTime > now);
+    }
+
+    // WHERE Feladatok
+    [HttpGet("upcoming")]
+    public async Task<IEnumerable<Event>> GetUpcomingEvents()
+    {
+        var now = DateTime.Now;
+        return await _context.Events.Where(e => e.EventDateTime > now).ToListAsync();
+    }
+
+    [HttpGet("author/{authorId}")]
+    public async Task<IEnumerable<Event>> GetEventsByAuthor(int authorId)
+    {
+        return await _context.Events.Where(e => e.AuthorId == authorId).ToListAsync();
+    }
+
+    [HttpGet("before/{date}")]
+    public async Task<IEnumerable<Event>> GetEventsBeforeDate(DateTime date)
+    {
+        return await _context.Events.Where(e => e.EventDateTime < date).ToListAsync();
+    }
+
+    // SELECT Feladatok
+    [HttpGet("titles")]
+    public async Task<IEnumerable<string>> GetEventTitles()
+    {
+        return await _context.Events.Select(e => e.Title).ToListAsync();
+    }
+
+    [HttpGet("dates")]
+    public async Task<IEnumerable<DateTime>> GetEventDates()
+    {
+        return await _context.Events.Select(e => e.EventDateTime).ToListAsync();
+    }
+
+    [HttpGet("details/{id}")]
+    public async Task<ActionResult<Event>> GetEventDetails(int id)
+    {
+        var eventItem = await _context.Events.FindAsync(id);
+        if (eventItem == null)
+        {
+            return NotFound();
+        }
+        return eventItem;
+    }
+
+    // GROUP BY Feladatok
+    [HttpGet("group-by-author")]
+    public async Task<IActionResult> GetEventGroupByAuthor()
+    {
+        var result = await _context.Events
+            .GroupBy(e => e.AuthorId)
+            .Select(g => new { AuthorId = g.Key, EventCount = g.Count() })
+            .ToListAsync();
+        
+        return Ok(result);
+    }
+
+    [HttpGet("group-by-month")]
+    public async Task<IActionResult> GetEventGroupByMonth()
+    {
+        var result = await _context.Events
+            .GroupBy(e => e.EventDateTime.Month)
+            .Select(g => new { Month = g.Key, EventCount = g.Count() })
+            .ToListAsync();
+        
+        return Ok(result);
+    }
+
+    [HttpGet("group-by-day")]
+    public async Task<IActionResult> GetEventGroupByDay()
+    {
+        var result = await _context.Events
+            .GroupBy(e => e.EventDateTime.Date)
+            .Select(g => new { Day = g.Key, EventCount = g.Count() })
+            .ToListAsync();
+        
+        return Ok(result);
+    }
+
+    // Vegyes feladatok
+    [HttpGet("summary")]
+    public async Task<IActionResult> GetEventSummary()
+    {
+        var eventCount = await _context.Events.CountAsync();
+        var earliestEvent = await _context.Events.OrderBy(e => e.EventDateTime).FirstOrDefaultAsync();
+        var latestEvent = await _context.Events.OrderByDescending(e => e.EventDateTime).FirstOrDefaultAsync();
+
+        return Ok(new 
+        {
+            EventCount = eventCount,
+            EarliestEvent = earliestEvent?.EventDateTime,
+            LatestEvent = latestEvent?.EventDateTime
+        });
+    }
+
+    [HttpGet("upcoming-count-by-author")]
+    public async Task<IActionResult> GetUpcomingCountByAuthor()
+    {
+        var now = DateTime.Now;
+        var result = await _context.Events
+            .Where(e => e.EventDateTime > now)
+            .GroupBy(e => e.AuthorId)
+            .Select(g => new { AuthorId = g.Key, EventCount = g.Count() })
+            .ToListAsync();
+        
+        return Ok(result);
+    }
+
+    [HttpGet("title-search/{keyword}")]
+    public async Task<IActionResult> GetEventByTitleSearch(string keyword)
+    {
+        var result = await _context.Events
+            .Where(e => e.Title.Contains(keyword))
+            .ToListAsync();
+        
+        return Ok(result);
+    }
+
+    [HttpGet("monthly-count")]
+    public async Task<IActionResult> GetMonthlyEventCount()
+    {
+        var result = await _context.Events
+            .GroupBy(e => e.EventDateTime.Month)
+            .Select(g => new { Month = g.Key, EventCount = g.Count() })
+            .ToListAsync();
+        
+        return Ok(result);
+    }
+}
+
+
+
+
+
+
+4. Feladat: Swagger dokumentáció készítése
+A Swagger lehetővé teszi, hogy automatikusan dokumentáljuk az API végpontjait. Az Startup.cs vagy Program.cs fájlban kell engedélyezni a Swagger használatát:
+
+Adjuk hozzá a Swagger NuGet csomagot:
+bash
+Másolás
+dotnet add package Swashbuckle.AspNetCore
+A Program.cs-ben engedélyezzük a Swagger-t:
+csharp
+Másolás
+public static IHostBuilder CreateHostBuilder(string[] args) =>
+    Host.CreateDefaultBuilder(args)
+        .ConfigureWebHostDefaults(webBuilder =>
+        {
+            webBuilder.ConfigureServices(services =>
+            {
+                services.AddDbContext<EventContext>(options =>
+                    options.UseSqlServer("YourConnectionString"));
+                services.AddControllers();
+                services.AddSwaggerGen();
+            });
+
+            webBuilder.Configure(app =>
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI();
+
+                app.UseRouting();
+                app.UseEndpoints(endpoints =>
+                {
+                    endpoints.MapControllers();
+                });
+            });
+        });
+
+
+
+
+
+
+
+
+Model:
+public class Event
+{
+    public int Id { get; set; }
+    public string Title { get; set; }
+    public DateTime EventDateTime { get; set; }
+    public DateTime RegistrationDeadline { get; set; }
+    public int AuthorId { get; set; }
+}

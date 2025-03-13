@@ -1,0 +1,9 @@
+ID,Title,EventDateTime,RegistrationDeadline,AuthorID
+1,Nyári fesztivál,2023-08-01 18:00:00,2023-07-25 23:59:59,1
+2,Innovációs konferencia,2023-08-05 09:00:00,2023-07-30 23:59:59,2
+3,Digitális marketing workshop,2023-08-10 10:00:00,2023-08-01 23:59:59,3
+4,Jövő technológiái előadás,2023-08-12 14:00:00,2023-08-03 23:59:59,4
+5,Színházi est,2023-08-15 19:30:00,2023-08-05 23:59:59,5
+6,Zenei koncert,2023-08-18 20:00:00,2023-08-08 23:59:59,6
+7,Önkéntes nap,2023-08-20 08:00:00,2023-08-10 23:59:59,7
+8,Közösségi találkozó,2023-08-25 17:00:00,2023-08-15 23:59:59,8
